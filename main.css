@@ -1,0 +1,1203 @@
+/* --- RESET & BASIC STYLES --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    display: flex; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+/* --- 1. MAIN HEADER (Đã đổi sang màu xanh gốc K2 GEAR) --- */
+.main-header {
+    background-color: #3b71ed; /* Màu xanh dương sáng của bạn */
+    padding: 15px 0;
+
+	position: sticky; 
+    top: 0; 
+    z-index: 9999;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.k2 { color: #ffffff; } /* Chữ trắng để nổi trên nền xanh */
+.gear { color: #ffffff; }
+
+.main-search {
+    display: flex;
+    width: 50%;
+    position: relative;
+}
+
+.main-search input {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.main-search button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #1b3965; /* Đổi nút tìm kiếm sang xanh đậm */
+    color: white;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    color: #ffffff; /* Icon màu trắng */
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ff3b30; /* Màu đỏ cho nổi bật số lượng giỏ hàng */
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* --- 2. SUBHEADER (Màu xanh đậm, dàn đều nội dung) --- */
+.subheader {
+    background-color: #1b3965; /* Màu xanh đậm của bạn */
+    padding: 12px 0;
+}
+
+/* --- TÌM VÀ SỬA ĐOẠN NÀY TRONG MAIN.CSS --- */
+.subheader-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    /* 1. Đổi dòng này thành center để gom tất cả vào giữa */
+    justify-content: center !important; 
+    
+    /* 2. Thêm dòng gap này để tạo khoảng cách (chừng 1 tab) giữa các chữ */
+    gap: 50px !important; 
+    
+    padding: 0 20px;
+}
+
+.subheader a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff; /* Chữ màu trắng */
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.subheader a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Sáng lên nhẹ khi hover */
+    transform: scale(1.05); 
+}
+
+.small-search-container {
+    margin-left: 20px; 
+}
+
+.small-search-icon {
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.small-search-icon:hover {
+    background-color: #ffffff;
+    color: #1b3965;
+}
+
+/* --- 3. MAIN BODY & SIDEBAR CỐ ĐỊNH (Giống MemoryZone) --- */
+.main-body {
+    padding-top: 20px;
+}
+
+.sidebar {
+    width: 250px; 
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 0; /* Bỏ padding hai bên để menu sát lề */
+    flex-shrink: 0; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0 15px 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #333;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.category-list a i {
+    width: 20px; 
+    text-align: center;
+    color: #777;
+}
+
+.category-list a:hover {
+    background-color: #f0f4ff;
+    color: #3b71ed; /* Màu xanh của bạn */
+}
+
+/* --- 4. VÙNG QUẢNG CÁO BÊN PHẢI --- */
+.ad-content {
+    flex-grow: 1; 
+    margin-left: 20px;
+}
+
+.main-ad-banner {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 300px; /* Cố định chiều cao banner cho đẹp */
+}
+
+.main-ad-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+}
+
+.more-ads-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ad-card {
+    flex: 1;
+    height: 180px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* --- KHU VỰC CHỨA SẢN PHẨM Ở DƯỚI --- */
+.products-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ================= KHU VỰC SẢN PHẨM (GRID 4 CỘT) ================= */
+
+.product-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Phần Tiêu đề và Bộ lọc (Lenovo, Asus...) */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1b3965; /* Xanh đậm K2 GEAR */
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.filter-tags a {
+    padding: 6px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.filter-tags a:hover {
+    border-color: #3b71ed; /* Xanh K2 GEAR */
+    color: #3b71ed;
+}
+
+.filter-tags a.view-all {
+    color: #3b71ed;
+    border-color: transparent;
+    font-weight: bold;
+    margin-left: auto; /* Đẩy nút Xem tất cả sang góc phải */
+}
+
+/* Lưới sản phẩm 4 cột */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tự động chia 4 cột đều nhau */
+    gap: 15px;
+}
+
+/* Từng thẻ sản phẩm */
+.product-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s, transform 0.3s;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px); /* Bay nhẹ lên khi di chuột */
+    border-color: #3b71ed;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff3b30; /* Đỏ rực */
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
+    margin-bottom: 15px;
+}
+
+.product-specs {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.product-specs span {
+    background-color: #f0f4ff; /* Nền xanh nhạt */
+    color: #3b71ed;
+    font-size: 11px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.product-name {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    height: 40px; /* Giới hạn chiều cao cho 2 dòng */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Cắt chữ nếu dài hơn 2 dòng */
+    -webkit-box-orient: vertical;
+}
+
+.product-price {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto; /* Đẩy giá xuống đáy thẻ */
+}
+
+.new-price {
+    color: #ff3b30;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.old-price {
+    color: #999;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+/* Nút đang được chọn sẽ có nền màu xanh */
+.filter-tags a.filter-btn.active {
+    background-color: #3b71ed;
+    color: white;
+    border-color: #3b71ed;
+}
+
+/* Class để ẩn sản phẩm không khớp */
+.product-card.hidden {
+    display: none;
+}
+
+/* Hiệu ứng mượt mà khi sản phẩm xuất hiện */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.product-card.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* ================= KHU VỰC TIN TỨC & MẸO VẶT ================= */
+.news-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột đều nhau */
+    gap: 40px; /* Khoảng cách giữa 2 cột */
+}
+
+.news-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1b3965; /* Xanh đậm K2 GEAR */
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các bài viết */
+}
+
+.news-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.news-img-box {
+    flex-shrink: 0;
+    width: 180px; /* Chiều rộng cố định cho khung ảnh */
+    height: 110px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.news-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng zoom nhẹ ảnh khi trỏ chuột vào bài viết */
+.news-item:hover .news-img-box img {
+    transform: scale(1.05); 
+}
+
+.news-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-heading {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.news-heading a {
+    color: #333;
+    transition: color 0.2s;
+}
+
+.news-heading a:hover {
+    color: #3b71ed; /* Hover đổi sang xanh K2 GEAR */
+}
+
+/* Đổi màu đỏ cho tiêu đề cột Khuyến mãi giống hình mẫu */
+.news-column:first-child .news-heading a {
+    color: #d82b2b;
+}
+.news-column:first-child .news-heading a:hover {
+    color: #3b71ed;
+}
+
+.news-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.news-desc {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Cắt chữ ở dòng thứ 3 và thêm dấu ... */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ================= CSS CHO FOOTER ================= */
+.main-footer {
+    background-color: #1b3965; /* Xanh đậm đồng bộ với subheader */
+    color: #d1d5db; /* Chữ xám sáng để dễ đọc trên nền tối */
+    padding: 60px 0 0 0;
+    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Chia 4 cột, cột đầu to gấp đôi */
+    gap: 40px;
+    padding: 0 20px 40px 20px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.footer-logo .k2 { color: #3b71ed; } /* Giữ chữ K2 màu xanh sáng */
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding-right: 20px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-contact i {
+    color: #3b71ed; /* Icon màu xanh K2 */
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #3b71ed;
+    transform: translateX(5px); /* Hiệu ứng chữ trượt nhẹ sang phải khi trỏ chuột */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    background-color: #3b71ed;
+    transform: translateY(-5px); /* Nút bay lên nhẹ khi trỏ chuột */
+}
+
+.payment-methods p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background-color: #12284c; /* Nền tối hơn nữa cho dòng bản quyền */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+/* ================= NÚT DANH MỤC TRÊN HEADER CỐ ĐỊNH ================= */
+.header-category-btn {
+    display: none; /* Ẩn đi khi ở trên cùng trang */
+    align-items: center;
+    gap: 8px;
+    background-color: #1b3965; /* Màu xanh đậm của subheader */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.header-category-btn:hover {
+    background-color: #2c528f; /* Sáng lên nhẹ khi di chuột */
+    transform: scale(1.05);
+}
+
+/* Class này sẽ được Javascript thêm vào khi người dùng cuộn xuống */
+.header-category-btn.show {
+    display: flex !important; /* Hiện nút ra */
+    animation: slideIn 0.3s ease; /* Hiệu ứng trượt nhẹ */
+}
+
+/* Hiệu ứng trượt từ trái sang cho nút thêm mượt */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= MENU DROPDOWN XỔ XUỐNG ================= */
+.dropdown-category-menu {
+    position: absolute;
+    top: 100%; /* Nằm ngay sát dưới nút */
+    left: 0; 
+    width: 260px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin-top: 15px; /* Cách nút ra một xíu */
+    
+    /* Ẩn menu lúc đầu + Hiệu ứng trượt từ dưới lên */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px); 
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10000;
+}
+
+/* Class active được JS gọi để hiện menu */
+.dropdown-category-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Mũi tên nhỏ chỉ lên nút Danh mục */
+.dropdown-category-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    transform: rotate(45deg);
+}
+
+/* Style cho các link bên trong menu */
+.dropdown-list {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.dropdown-list a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    color: #333;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.dropdown-list a i {
+    width: 20px;
+    text-align: center;
+    color: #777;
+}
+
+.dropdown-list a:hover {
+    background-color: #f0f4ff;
+    color: #3b71ed;
+    padding-left: 25px; /* Hiệu ứng chữ thụt vào một xíu khi hover */
+}
+
+.dropdown-list a:hover i {
+    color: #3b71ed;
+}
+
+/* ================= MEGA MENU (Xổ ngang bên phải) ================= */
+
+/* Thiết lập mỏ neo cho menu mẹ để bảng Mega can đúng tọa độ trên cùng */
+.category-list, .dropdown-list {
+    position: relative;
+}
+
+/* Kéo mũi tên sang sát lề phải */
+.has-mega-menu > a {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.arrow-icon {
+    font-size: 12px;
+    color: #999;
+    transition: transform 0.2s;
+}
+
+/* Định dạng Bảng Mega to xổ ra bên phải */
+.mega-menu-panel {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Đẩy bảng văng ra sát mép phải của menu cũ */
+    width: 650px; /* Độ rộng của bảng to */
+    min-height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.08);
+    padding: 25px;
+    z-index: 99999;
+    
+    /* Ẩn mặc định và thiết lập hiệu ứng trượt */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* HIỆN BẢNG KHI DI CHUỘT VÀO THẺ LI */
+.has-mega-menu:hover .mega-menu-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Đổi màu chữ và icon thành xanh K2 GEAR khi trỏ chuột */
+.has-mega-menu:hover > a, 
+.has-mega-menu:hover .arrow-icon {
+    color: #3b71ed !important;
+}
+
+/* Chia lưới các cột bên trong Mega Menu */
+.mega-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tự động chia 3 cột đều nhau */
+    gap: 30px;
+}
+
+.mega-col h4 {
+    font-size: 14px;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Ghi đè CSS cũ để link bên trong Mega menu nhỏ nhắn, gọn gàng hơn */
+.mega-col a {
+    display: block !important;
+    padding: 6px 0 !important;
+    font-size: 14px !important;
+    color: #555 !important;
+    border-bottom: none !important;
+    gap: 0 !important; /* Xóa khoảng cách icon bị lây từ CSS cũ */
+}
+
+.mega-col a:hover {
+    color: #3b71ed !important;
+    background-color: transparent !important;
+    transform: translateX(5px); /* Hiệu ứng thò nhẹ chữ ra khi trỏ chuột */
+}
+
+/* ================= BẢNG MEGA MENU 4 CỘT (Mở rộng) ================= */
+.mega-menu-panel.mega-4-cols {
+    width: 850px; /* Bảng to hơn để chứa 4 cột */
+}
+
+.mega-menu-panel.mega-4-cols .mega-row {
+    grid-template-columns: repeat(4, 1fr); /* Chia làm 4 cột đều nhau */
+    gap: 20px;
+}
+
+/* ================= POPUP GIỎ HÀNG ================= */
+.cart-popup {
+    position: absolute;
+    top: 150%; /* Nằm dưới icon giỏ hàng */
+    right: -10px; /* Căn lề phải */
+    width: 320px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    z-index: 10000;
+    color: #333;
+    
+    /* Ẩn mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+
+/* Hiện popup khi có class active */
+.cart-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Tạo cái mũi tên nhỏ trỏ lên icon giỏ hàng */
+.cart-popup::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 18px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    transform: rotate(45deg);
+}
+
+.cart-popup-title {
+    margin: 0;
+    padding: 15px;
+    font-size: 15px;
+    color: #1b3965;
+    border-bottom: 1px solid #eee;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Khung chứa sản phẩm có thanh cuộn nếu quá nhiều món */
+.cart-items {
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 10px 15px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-item-name {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cart-item-price {
+    margin: 0;
+    font-size: 14px;
+    color: #ff3b30;
+    font-weight: bold;
+}
+
+.cart-item-price span {
+    color: #888;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.cart-popup-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+    border-radius: 0 0 8px 8px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-price {
+    color: #ff3b30;
+    font-size: 18px;
+}
+
+.btn-checkout {
+    display: block;
+    text-align: center;
+    background-color: #3b71ed; /* Xanh K2 GEAR */
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.btn-checkout:hover {
+    background-color: #2c528f;
+    color: white;
+}
+
+/* ================= TRANG DANH MỤC SẢN PHẨM ================= */
+.category-page {
+    margin-top: 20px;
+}
+
+/* 1. Breadcrumb (Điều hướng) */
+.breadcrumb {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breadcrumb a {
+    color: #3b71ed; /* Màu xanh K2 */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb i {
+    font-size: 10px;
+    color: #999;
+}
+
+/* 2. Hộp Danh mục con (RAM Laptop, RAM PC...) */
+.sub-category-boxes {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.sub-cat-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-width: 200px;
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.sub-cat-box img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.sub-cat-box span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+}
+
+.sub-cat-box:hover, .sub-cat-box.active {
+    border-color: #3b71ed;
+    background-color: #f0f4ff;
+    box-shadow: 0 4px 10px rgba(59, 113, 237, 0.1);
+}
+
+/* 3. Nút Lọc (Dropdown Filters) */
+.filter-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Bo tròn giống nút */
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none; /* Ẩn mũi tên mặc định của trình duyệt */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.filter-dropdown:hover, .filter-dropdown:focus {
+    border-color: #3b71ed;
+}
+
+/* 4. Tiêu đề và Thanh Sắp xếp */
+.category-header-sort {
+    margin-bottom: 20px;
+}
+
+.cat-page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.sort-label {
+    font-weight: 700;
+    color: #333;
+}
+
+.sort-options a {
+    color: #666;
+}
+
+.sort-options a:hover, .sort-options a.active {
+    color: #3b71ed;
+    font-weight: 600;
+}
+
+/* 5. Lưới 5 cột cho trang danh mục */
+.grid-5-cols {
+    grid-template-columns: repeat(5, 1fr) !important;
+}
+
+/* Nút Trạng thái Hàng hóa (Tương tự "Chỉ bán build PC" trong ảnh) */
+.stock-status {
+    background-color: #3b71ed;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+:root {
+    --k2-blue: #3b66cc;      /* Màu xanh header của bạn */
+    --k2-dark-blue: #1a428a; /* Màu xanh sub-header */
+    --k2-accent: #ffcc00;    /* Màu vàng điểm nhấn (nếu có) */
+    --price-red: #ce0707;    /* Màu đỏ cho giá tiền và nút */
+}
+
+body { font-family: Arial, sans-serif; background: #fff; margin: 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+/* Header & Sub-header K2 GEAR */
+.header { background: var(--k2-blue); color: white; padding: 15px 0; }
+.header-flex { display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 28px; font-weight: bold; }
+
+.search-box { flex: 1; margin: 0 40px; display: flex; }
+.search-box input { flex: 1; padding: 10px; border: none; border-radius: 4px 0 0 4px; }
+.search-box button { background: #162a5a; border: none; padding: 0 15px; color: white; border-radius: 0 4px 4px 0; }
+
+.header-right { display: flex; gap: 20px; align-items: center; }
+.cart-count { background: red; border-radius: 50%; padding: 1px 6px; font-size: 11px; margin-right: 2px; }
+
+.sub-header { background: var(--k2-dark-blue); color: white; }
+.menu-flex { display: flex; align-items: center; }
+.category-btn { background: #ffcc00; color: #000; padding: 12px 20px; font-weight: bold; font-size: 14px; }
+.menu-items { margin-left: 30px; display: flex; gap: 25px; font-size: 13px; font-weight: bold; }
+
+/* Bố cục Giỏ hàng kiểu MemoryZone */
+.breadcrumb { font-size: 13px; color: #777; margin: 20px 0; }
+.page-title { border-bottom: 2px solid #f4f4f4; padding-bottom: 15px; margin-bottom: 25px; }
+
+.cart-layout { display: flex; gap: 30px; }
+.cart-left { flex: 2.5; }
+.cart-right { flex: 1; }
+
+/* Item thiết kế sạch sẽ */
+.cart-item { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid #eee; position: relative; }
+.remove-item { position: absolute; left: -25px; color: #bbb; cursor: pointer; font-size: 22px; }
+.cart-item img { width: 80px; height: 80px; object-fit: contain; margin-right: 20px; border: 1px solid #f0f0f0; }
+.item-info { flex: 1; font-size: 14px; font-weight: bold; }
+.item-price { width: 150px; color: var(--price-red); font-weight: bold; font-size: 16px; }
+
+/* Ô số lượng hiện đại */
+.item-qty { display: flex; border: 1px solid #ccc; border-radius: 4px; overflow: hidden; }
+.item-qty button { background: #fff; border: none; padding: 5px 12px; cursor: pointer; font-size: 16px; }
+.item-qty input { width: 40px; border: none; border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-weight: bold; }
+
+/* Summary Box bên phải */
+.summary-card { border: 1px solid #eee; padding: 25px; background: #fafafa; border-radius: 5px; position: sticky; top: 20px; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
+.total-amount { color: var(--price-red); font-size: 22px; font-weight: bold; }
+.btn-checkout { width: 100%; background: var(--price-red); color: white; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+.btn-checkout:hover { background: #a30505; }
+
+.order-note textarea { width: 100%; height: 80px; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin-top: 10px; resize: none; }

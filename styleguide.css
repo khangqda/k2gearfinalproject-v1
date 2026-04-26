@@ -1,0 +1,20 @@
+:root {
+  --neutral-colors400: rgba(174, 185, 225, 1);
+  --system-colorsgreen-300: rgba(5, 193, 104, 1);
+  --neutral-colors500: rgba(126, 137, 172, 1);
+  --neutral-colors100: rgba(255, 255, 255, 1);
+  --system-colorsred-300: rgba(255, 90, 101, 1);
+  --neutral-colors600: rgba(11, 23, 57, 1);
+  --neutral-colors300: rgba(233, 234, 243, 1);
+  --secondary-colorscolor-4: rgba(52, 59, 79, 1);
+  --othergreen-50: rgba(5, 193, 104, 0.2);
+  --otherred-50: rgba(255, 90, 101, 0.2);
+  --paragraph-small-font-family: "Mona-Sans", Helvetica;
+  --paragraph-small-font-weight: 500;
+  --paragraph-small-font-size: 10px;
+  --paragraph-small-letter-spacing: 0px;
+  --paragraph-small-line-height: 14px;
+  --paragraph-small-font-style: normal;
+  --general-shadow-03: 0px 8px 28px 0px rgba(1, 5, 17, 0.3);
+  --general-shadow-01: 1px 1px 1px 0px rgba(16, 25, 52, 0.4);
+}

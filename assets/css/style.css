@@ -1,0 +1,349 @@
+/* =========================================
+   1. CÀI ĐẶT CHUNG (RESET & FONTS)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6; /* Nền xám trắng giống hình thiết kế */
+    color: #111827;
+}
+
+/* Ép kích thước chuẩn cho tất cả Icon SVG */
+svg.icon { width: 20px; height: 20px; min-width: 20px; display: inline-block; vertical-align: middle; }
+svg.icon-sm { width: 16px; height: 16px; min-width: 16px; }
+
+/* =========================================
+   2. BỐ CỤC CHÍNH (KHUNG XƯƠNG GIAO DIỆN)
+========================================= */
+.app-wrapper {
+    display: flex; /* Chia màn hình làm 2 cột: Sidebar và Cột nội dung */
+    min-height: 100vh;
+}
+
+.main-content-wrapper {
+    flex-grow: 1;
+    margin-left: 260px; /* Chừa chỗ cho Sidebar cố định bên trái */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. SIDEBAR (CỘT TRÁI MÀU XANH)
+========================================= */
+.admin-sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #3b82f6; /* Xanh dương K2 GEAR */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Gắn chặt bên trái */
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-logo { height: 80px; display: flex; align-items: center; padding: 0 24px; }
+.sidebar-logo h2 { font-size: 24px; font-weight: 800; letter-spacing: 2px; color: #000000; }
+
+.sidebar-nav { flex-grow: 1; overflow-y: auto; padding-top: 10px; }
+.menu-list { list-style: none; }
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* THÊM DÒNG NÀY ĐỂ TÁCH ICON VÀ CHỮ */
+    padding: 12px 16px;
+    margin: 4px 16px;
+    color: #e0e7ff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.menu-item:hover { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; }
+.menu-item.active { background-color: #1d4ed8; color: #ffffff; }
+.sidebar-bottom { padding: 16px 0 24px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+/* =========================================
+   4. HEADER (THANH TÌM KIẾM TRÊN CÙNG)
+========================================= */
+.admin-header {
+    height: 80px;
+    background-color: #ffffff; /* Nền trắng */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+}
+
+.search-container { display: flex; align-items: center; background: #f3f4f6; padding: 8px 16px; border-radius: 8px; width: 400px; }
+.search-input { border: none; background: transparent; outline: none; margin-left: 8px; width: 100%; color: #4b5563; }
+.header-right { display: flex; align-items: center; gap: 24px; }
+.icon-btn { background: none; border: none; cursor: pointer; color: #6b7280; display: flex; align-items: center;}
+.icon-btn:hover { color: #111827; }
+
+.user-profile { display: flex; align-items: center; gap: 12px; border-left: 1px solid #e5e7eb; padding-left: 24px; }
+.user-info { display: flex; flex-direction: column; text-align: right; }
+.user-name { font-size: 14px; font-weight: 600; color: #111827; }
+.user-role { font-size: 11px; color: #6b7280; text-transform: uppercase; }
+.avatar.text-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0284c7; /* Màu xanh biển đậm của K2 GEAR */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.mobile-menu-btn { display: none; }
+
+/* =========================================
+   5. NỘI DUNG TRANG SẢN PHẨM & ĐƠN HÀNG
+========================================= */
+.page-content { padding: 32px; flex-grow: 1; }
+.page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+.page-title { margin: 0 0 8px 0; font-size: 28px; color: #111827; }
+.page-subtitle { margin: 0; color: #6b7280; font-size: 14px; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; }
+.btn-primary { background-color: #3b82f6; color: white; }
+.btn-primary:hover { background-color: #2563eb; }
+
+/* Các thẻ thống kê và bộ lọc */
+.top-controls { display: flex; gap: 24px; margin-bottom: 24px; }
+.filter-card, .summary-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.filter-card { flex-grow: 1; display: flex; align-items: flex-end; gap: 16px; }
+.filter-group label { display: block; font-size: 12px; font-weight: 600; color: #6b7280; margin-bottom: 8px; }
+.form-select { padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; outline: none; }
+.summary-title { margin: 0 0 8px 0; color: #6b7280; font-size: 14px; }
+.summary-value { margin: 0 0 8px 0; font-size: 24px; color: #111827; }
+.summary-trend { margin: 0; font-size: 12px; }
+.trend-up { color: #10b981; }
+
+/* Các nhãn (Badge) */
+.badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge-green { background-color: #d1fae5; color: #065f46; }
+.badge-yellow { background-color: #fef3c7; color: #92400e; }
+.badge-blue { background-color: #dbeafe; color: #1e40af; }
+
+/* Nhãn trạng thái Đơn hàng */
+.badge-status-pending { background-color: #fee2e2; color: #ef4444; }
+.badge-status-confirmed { background-color: #dbeafe; color: #1e40af; }
+.badge-status-shipping { background-color: #fef3c7; color: #92400e; }
+.badge-status-delivered { background-color: #d1fae5; color: #065f46; }
+.badge-status-cancelled { background-color: #e5e7eb; color: #4b5563; }
+
+/* Bảng dữ liệu */
+.table-container { background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; text-align: left; }
+.admin-table th { background-color: #f9fafb; color: #6b7280; font-size: 12px; font-weight: 600; padding: 16px; border-bottom: 1px solid #e5e7eb; }
+.admin-table td { padding: 16px; border-bottom: 1px solid #e5e7eb; vertical-align: middle; }
+
+/* Thu nhỏ ảnh sản phẩm */
+.product-info { display: flex; align-items: center; gap: 12px; }
+.product-img { width: 40px; height: 40px; background-color: #fff; border: 1px solid #e5e7eb; border-radius: 6px; object-fit: contain; }
+.product-meta strong { display: block; color: #111827; font-size: 14px; }
+.product-meta span { color: #6b7280; font-size: 12px; }
+
+/* Màu sắc text và chấm trạng thái */
+.price-info strong { display: block; font-size: 14px; }
+.text-muted { color: #6b7280; font-size: 12px; }
+.text-danger { color: #ef4444; }
+.text-success { color: #10b981; }
+
+.status-indicator { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot-green { background-color: #10b981; }
+.dot-red { background-color: #ef4444; }
+.visibility-status { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; color: #6b7280; }
+
+.action-buttons { display: flex; gap: 8px; }
+
+/* --- TÀNG HÌNH THANH CUỘN CHO SIDEBAR --- */
+.sidebar-nav {
+    -ms-overflow-style: none;  /* Ẩn trên trình duyệt Edge/IE */
+    scrollbar-width: none;     /* Ẩn trên trình duyệt Firefox */
+}
+
+.sidebar-nav::-webkit-scrollbar {
+    display: none; /* Ẩn trên Chrome, Cốc Cốc, Safari */
+}
+
+/* =========================================
+   6. PHÂN TRANG (PAGINATION) - BẢN ĐẸP
+========================================= */
+.pagination-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #f3f4f6;
+    border-top: 1px solid #e5e7eb;
+}
+
+.pagination-info { font-size: 14px; color: #4b5563; }
+.pagination-info strong { color: #111827; }
+
+/* Ép các nút nằm ngang hàng với nhau */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Nút Lùi (Màu Xám) */
+.btn-prev {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    background-color: #a1a5b0;
+    color: #ffffff;
+    border: none; border-radius: 10px;
+    text-decoration: none; cursor: pointer; transition: 0.2s;
+}
+.btn-prev:hover:not(.disabled) { background-color: #6b7280; }
+
+/* Nút Tới (Màu Xanh Navy Đậm) */
+.btn-next {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: none; border-radius: 10px;
+    text-decoration: none; cursor: pointer; transition: 0.2s;
+}
+.btn-next:hover:not(.disabled) { background-color: #000000; }
+
+.disabled { opacity: 0.5; cursor: not-allowed !important; pointer-events: none; }
+
+/* Nút Số Trang Thường (Trong suốt, chữ xám xanh) */
+.btn-page {
+    display: flex; align-items: center; justify-content: center;
+    min-width: 32px; height: 32px;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 16px; font-weight: 600;
+    border: none; border-radius: 8px;
+    text-decoration: none; transition: 0.2s; cursor: pointer;
+}
+.btn-page:hover { color: #1e293b; }
+
+/* Nút Số Trang Đang Chọn (Cao hơn, Nền tím nhạt) */
+.btn-page.active {
+    background-color: #e0e7ff;
+    color: #1e1b4b;
+    height: 42px;
+    min-width: 36px;
+    border-radius: 10px;
+}
+
+/* =========================================
+   7. 3 KHỐI THÔNG TIN DƯỚI CÙNG (INSIGHTS)
+========================================= */
+.bottom-insights {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.insight-card {
+    flex: 1; /* Chia đều 3 cột ngang nhau */
+    background: #e5e7eb; /* Nền xám cho các thẻ */
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.insight-title {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.insight-desc {
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.insight-list { margin-top: 16px; }
+.insight-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #d1d5db; /* Thêm dòng gạch mờ cho đẹp */
+}
+.insight-item:last-child { border-bottom: none; }
+.insight-item strong { color: #111827; }
+/* =========================================
+   8. TRANG DASHBOARD (BẢNG ĐIỀU KHIỂN)
+========================================= */
+.dashboard-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.dark-card {
+    background-color: #374151; /* Màu xám tối */
+    border-radius: 12px;
+    padding: 24px;
+    color: #f3f4f6; /* Chữ màu sáng */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dash-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+.icon-wrap {
+    width: 32px; height: 32px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.dash-value { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: #ffffff;}
+.dash-trend { font-size: 13px; font-weight: 500; }
+
+.dashboard-charts {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.chart-card { flex: 1; }
+.chart-card h3 { font-size: 16px; color: #f3f4f6; font-weight: 500; margin-bottom: 24px; }
+.canvas-container { position: relative; height: 300px; width: 100%; }
+
+.badge-red {
+    background-color: #fee2e2; /* Màu nền đỏ nhạt */
+    color: #ef4444;            /* Màu chữ đỏ đậm */
+    border: 1px solid #fca5a5;  /* Viền đỏ (tùy chọn cho giống 2 cái kia) */
+}
+
+.badge-status-confirmed { background-color: #e0f2fe !important; color: #0284c7 !important; }
+.badge-status-delivered { background-color: #d1fae5 !important; color: #059669 !important; }
